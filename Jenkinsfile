@@ -13,4 +13,7 @@ npm run dev'''
     }
 
   }
+  environment {
+    BRAINTREE_PUBLIC_KEY = 'abc'
+  }
 }
