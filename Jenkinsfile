@@ -8,7 +8,8 @@ pipeline {
 cd client
 npm install 
 cd ..
-npm run dev'''
+npm run dev
+exit'''
       }
     }
 
