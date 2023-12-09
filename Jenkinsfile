@@ -6,10 +6,10 @@ pipeline {
       steps {
         sh 'npm install'
         dir(path: 'client') {
-          sh 'npm install'
+          sh '''npm install
+cd ..'''
         }
 
-        dir(path: 'ECommerceAppl')
       }
     }
 
