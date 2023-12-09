@@ -4,9 +4,9 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh '''npm install --production=false 
+        sh '''npm install 
 cd client
-npm install --production=false 
+npm install 
 cd ..
 npm run dev'''
       }
