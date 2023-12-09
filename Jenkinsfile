@@ -15,7 +15,7 @@ cd ..'''
 
     stage('Run') {
       steps {
-        sh 'npm run dev'
+        sh 'npm run server'
       }
     }
 
