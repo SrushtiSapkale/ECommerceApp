@@ -9,6 +9,7 @@ pipeline {
           sh 'npm install'
         }
 
+        dir(path: 'ECommerceApp')
       }
     }
 
