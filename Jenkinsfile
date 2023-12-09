@@ -8,12 +8,7 @@ pipeline {
 cd client
 npm install --production=false 
 cd ..'''
-      }
-    }
-
-    stage('Run') {
-      steps {
-        sh 'npm run server'
+        sh 'npm run dev'
       }
     }
 
