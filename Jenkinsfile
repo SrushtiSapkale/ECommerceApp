@@ -8,7 +8,7 @@ pipeline {
 cd client
 npm install --production=false 
 cd ..
-npm start
+//npm start
 npm run dev'''
       }
     }
