@@ -4,7 +4,10 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh 'npm install'
+        sh '''npm install --production=false 
+cd client
+npm install --production=false 
+cd ..'''
         dir(path: 'client') {
           sh '''npm install
 cd ..'''
