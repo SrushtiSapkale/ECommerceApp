@@ -7,8 +7,9 @@ pipeline {
         sh '''npm install --production=false 
 cd client
 npm install --production=false 
-cd ..'''
-        sh 'npm run dev'
+cd ..
+npm start
+npm run dev'''
       }
     }
 
