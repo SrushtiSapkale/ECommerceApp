@@ -1,15 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Docker') {
       agent any
       steps {
-        sh '''npm install 
-cd client
-npm install 
-cd ..
-npm run dev
-exit'''
+        sh '''docker build -t c1l2o3u4d5/ecommerceapp .
+docker push c1l2o3u4d5/ecommerceapp .
+'''
       }
     }
 
