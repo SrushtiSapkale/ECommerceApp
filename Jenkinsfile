@@ -5,7 +5,7 @@ pipeline {
       agent any
       steps {
         sh '''docker build -t user/ecommerceapp .
-docker push user/ecommerceapp . '''
+docker push user/ecommerceapp '''
       }
     }
 
