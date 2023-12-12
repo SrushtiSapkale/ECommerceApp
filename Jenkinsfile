@@ -16,9 +16,8 @@ pipeline {
             steps {
                 script {
                     sh 'docker build -t c1l2o3u4d5/ecommerceapp . '
-                    withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, passwordVariable: 'DOCKERHUB_CREDENTIALS_PASSWORD', usernameVariable: 'DOCKERHUB_CREDENTIALS_USER')]) {
-                        sh "docker login -u ${env.DOCKERHUB_CREDENTIALS_USER} -p ${env.DOCKERHUB_CREDENTIALS_PASSWORD}"
-                        sh 'docker push c1l2o3u4d5/ecommerceapp '
+             docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+            app.push("c1l2o3u4d5/ecommerceapp")
                     }
                 }
             }
