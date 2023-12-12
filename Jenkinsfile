@@ -4,7 +4,8 @@ pipeline {
     stage('Docker') {
       agent any
       steps {
-        sh '''docker build -t  c1l2o3u4d5/ecommerceapp. '''
+        sh '''docker build -t c1l2o3u4d5/ecommerceapp. 
+docker push c1l2o3u4d5/ecommerceapp. '''
       }
     }
 
