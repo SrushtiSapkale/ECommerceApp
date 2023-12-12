@@ -15,9 +15,9 @@ pipeline {
             agent any
             steps {
                 script {
-                    sh 'docker build -t c1l2o3u4d5/ecommerceapp . '
+                    sh 'docker build -t username/ecommerceapp . '
              docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            app.push("c1l2o3u4d5/ecommerceapp")
+            app.push("username/ecommerceapp")
                     }
                 }
             }
