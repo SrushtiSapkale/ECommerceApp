@@ -1,24 +1,2 @@
-pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      agent any
-      steps {
-        sh '''npm install 
-cd client
-npm install 
-cd ..
-npm run dev
-exit'''
-      }
-    }
-
-  }
-  environment {
-    BRAINTREE_PUBLIC_KEY = 'abc'
-    MONGO_URL = credentials('mongourl')
-    BRAINTREE_MERCHANT_ID = 'abc2'
-    BRAINTREE_PRIVATE_KEY = 'abc1'
-    JWT_SECRET = 'jwt'
-  }
-}
+docker build -t c1l2o3u4d5/ecommerceapp .
+docker run -it -p 3000:3000 c1l2o3u4d5/ecommerceapp
