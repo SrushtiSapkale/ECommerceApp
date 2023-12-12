@@ -4,8 +4,8 @@ pipeline {
     stage('Docker') {
       agent any
       steps {
-        sh '''docker build -t DockerHub/ecommerceapp .
-docker push DockerHub/ecommerceapp '''
+        sh '''docker build -t dockerhub/ecommerceapp .
+docker push dockerhub/ecommerceapp '''
       }
     }
 
@@ -16,6 +16,6 @@ docker push DockerHub/ecommerceapp '''
     BRAINTREE_MERCHANT_ID = 'abc2'
     BRAINTREE_PRIVATE_KEY = 'abc1'
     JWT_SECRET = 'jwt'
-    DockerHub = 'DockerHub'
+    dockerhub = 'dockerhub'
   }
 }
