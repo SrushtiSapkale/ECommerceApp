@@ -21,3 +21,4 @@ pipeline {
     docker-hub-credentials = 'docker-hub-credentials'
   }
 }
+}
