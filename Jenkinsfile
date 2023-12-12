@@ -16,6 +16,6 @@ docker push user/ecommerceapp '''
     BRAINTREE_MERCHANT_ID = 'abc2'
     BRAINTREE_PRIVATE_KEY = 'abc1'
     JWT_SECRET = 'jwt'
-    DockerHub = 'user'
+    DockerHub = 'DockerHub'
   }
 }
