@@ -5,6 +5,8 @@ pipeline {
       agent any
       steps {
         sh 'docker build -t dockerhub/ecommerceapp . '
+        withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'docker-hub-credentialsPassword', usernameVariable: 'docker-hub-credentialsUser')]) {
+        	sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
         sh 'docker push c1l2o3u4d5/ecommerceapp '     
       }
     }
