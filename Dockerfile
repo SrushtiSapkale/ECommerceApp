@@ -10,7 +10,7 @@ RUN npm install
 WORKDIR /ECommerceApp/
 COPY /package*.json ./
 RUN npm install
-
+EXPOSE 8080
 
 # Runtime App
 CMD npm run dev
