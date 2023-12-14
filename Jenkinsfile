@@ -15,7 +15,9 @@ environment {
   stages {
     stage('Build') {
       steps {
+       script {
         dockerImage = docker.build registry
+       }
       }
     }
 
