@@ -11,6 +11,6 @@ WORKDIR /ECommerceApp/
 COPY /package*.json ./
 RUN npm install
 EXPOSE 8080
-
+RUN npm run dev
 # Runtime App
-CMD npm run dev
+
