@@ -3,11 +3,11 @@ pipeline {
 
     environment {
         BRAINTREE_PUBLIC_KEY = 'abc'
-        MONGO_URL = credentials('mongourl')
+        MONGO_URL = 'mongourl'
         BRAINTREE_MERCHANT_ID = 'abc2'
         BRAINTREE_PRIVATE_KEY = 'abc1'
         JWT_SECRET = 'jwt'
-        DOCKERHUB_CREDENTIALS = credentials('docker-hub-credentials')
+        DOCKERHUB_CREDENTIALS = 'docker-hub-credentials'
     }
 
     stages {
