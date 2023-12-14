@@ -21,11 +21,11 @@ pipeline {
       }
     }
 
-    stage('Deploy to container'){
-            steps{
-                sh 'docker run -d -p 8081:80 c1l2o3u4d5/ecommerceapp'
-            }
-        }
+    stage('Deploy to container') {
+      steps {
+        sh 'docker run -d -p 8081:80 c1l2o3u4d5/ecommerceapp'
+      }
+    }
 
   }
   environment {
