@@ -17,7 +17,7 @@ pipeline {
                 script {
                     sh 'docker build -t username/ecommerceapp . '
              docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            app.push("username/ecommerceapp")
+            app.push("c1l2o3u4d5/ecommerceapp")
                     }
                 }
             }
