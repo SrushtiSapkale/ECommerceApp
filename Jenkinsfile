@@ -1,26 +1,8 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        sh 'docker build -t c1l2o3u4d5/ecommerceapp .'
-      }
-    }
-
-    stage('Login') {
-      steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin -i'
-      }
-    }
-
-    stage('Push') {
-      steps {
-        sh 'docker push c1l2o3u4d5/ecommerceapp'
-      }
-    }
-
-  }
-  environment {
+ agent any
+  
+environment {
+    registry = "c1l2o3u4d5/ecommerceapp"
     BRAINTREE_PUBLIC_KEY = 'abc'
     MONGO_URL = 'mongourl'
     BRAINTREE_MERCHANT_ID = 'abc2'
@@ -28,4 +10,25 @@ pipeline {
     JWT_SECRET = 'jwt'
     DOCKERHUB_CREDENTIALS = 'docker-hub-credentials'
   }
+  
+ 
+  stages {
+    stage('Build') {
+      steps {
+        dockerImage = docker.build registry
+      }
+    }
+
+    stage('Push') {
+      steps {
+        script {
+            docker.withRegistry( '', DOCKERHUB_CREDENTIALS ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+
+  }
+  
 }
