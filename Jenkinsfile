@@ -23,7 +23,7 @@ pipeline {
 
     stage('Deploy to container') {
       steps {
-        sh 'docker pull c1l2o3u4d5/ecommerceapp && docker run -d -p 3000:80 c1l2o3u4d5/ecommerceapp'
+        sh 'docker run -d -p 8888:80 c1l2o3u4d5/ecommerceapp'
       }
     }
 
